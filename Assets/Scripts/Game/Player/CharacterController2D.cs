@@ -138,8 +138,8 @@ public class CharacterController2D : MonoBehaviour
 		m_JumpAble++;
 	}
 
-	private void OnCollisionEnter2D(Collision2D collision) 
-	{ 
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
 		OnLandEvent.Invoke();
 		m_JumpAble = m_JumpCount;
 	}

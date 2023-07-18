@@ -12,11 +12,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        HorizontalMovement();
+        HorizontalVelocity = Input.GetAxisRaw("Horizontal") * speed;
+        animator.SetFloat("Speed", Mathf.Abs(HorizontalVelocity));
 
-        JumpStart();
+        if (Input.GetButtonDown("Jump"))
+        {
+            jump = true;
+            animator.SetBool("Jump", true);
+        }
 
-        Crouching();
+        if (Input.GetKey(KeyCode.LeftControl))
+            crouch = true;
+        else if (Input.GetKeyUp(KeyCode.LeftControl))
+            crouch = false;
     }
 
     private void FixedUpdate()
@@ -25,29 +33,7 @@ public class PlayerMovement : MonoBehaviour
         jump = false;
     }
 
-    private void HorizontalMovement()
-    {
-        HorizontalVelocity = Input.GetAxisRaw("Horizontal") * speed;
-        animator.SetFloat("Speed", Mathf.Abs(HorizontalVelocity));
-    }
-
-    private void JumpStart()
-    {
-        if (Input.GetButtonDown("Jump"))
-        {
-            jump = true;
-            animator.SetBool("Jump", true);
-        }
-    }
-
     public void JumpEnd() => animator.SetBool("Jump", false);
-    private void Crouching()
-    {
-        if (Input.GetKey(KeyCode.LeftControl))
-            crouch = true;
-        else if (Input.GetKeyUp(KeyCode.LeftControl))
-            crouch = false;
-    }
 
     public void CrouchCheck(bool CeilHit) => animator.SetBool("Crouch", CeilHit);
 }
