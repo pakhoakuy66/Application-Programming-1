@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float Speed = 40f;
+    [SerializeField] private float Speed;
     [SerializeField] private CharacterController2D controller;
     [SerializeField] private Animator animator;
 
@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     {
         HorizontalMovement();
 
-        JumpStart();
+        Jumping();
 
         Crouching();
     }
@@ -33,9 +33,13 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(HorizontalVelocity));
     }
 
-    private void JumpStart()
+    private void Jumping()
     {
-        if (Input.GetButtonDown("Jump")) Jump = true;
+        if (Input.GetButtonDown("Jump"))
+        {
+            Jump = true;
+            animator.SetBool("IsJumping", true);
+        }
     }
 
     private void Crouching()
@@ -49,5 +53,11 @@ public class PlayerMovement : MonoBehaviour
     public void CrouchCheck(bool CeilHit)
     {
         animator.SetBool("IsCrouching", CeilHit);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(!collision.collider.CompareTag("Player"))
+            animator.SetBool("IsJumping", false);
     }
 }
