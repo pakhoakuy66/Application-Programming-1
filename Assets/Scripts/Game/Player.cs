@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -30,6 +29,7 @@ public class Player : MonoBehaviour
     private float jumpForce;
     private bool jump = false;
     private bool crouch = false;
+    private bool isCrouching = false;
 
     private int Horizontal()
     {
@@ -45,10 +45,20 @@ public class Player : MonoBehaviour
         transform.localScale = flipScale;
     }
 
-    private bool IsCollide(Transform transform, LayerMask mask)
+    private bool CircleCastHit(Transform transform, float radius)
     {
-        RaycastHit2D cast = Physics2D.CircleCast(transform.position, .3f, Vector2.down, 0f, mask);
+        RaycastHit2D cast = Physics2D.CircleCast(transform.position, radius, Vector2.down, 0f, groundMask);
         return cast.collider != null;
+    }
+
+    private bool IsGrounded()
+    {
+        return CircleCastHit(feet, .2f);
+    }
+
+    private bool HeadBump()
+    {
+        return CircleCastHit(head, .2f);
     }
 
     private void Awake()
@@ -58,30 +68,37 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        velocity = Horizontal() * speed;
+        float speedFactor = isCrouching ? crouchSpeedFactor : 1;
+        velocity = Horizontal() * speed * 10f * speedFactor;
+
         animator.SetFloat("Speed", Mathf.Abs(velocity));
+
         if (isFacingRight && velocity < -.01 || !isFacingRight && velocity > .01)
         {
             isFacingRight = !isFacingRight;
             Flip();
         }
 
-        if (Input.GetKeyDown(jumpKey) && IsCollide(feet, groundMask))
+        if (Input.GetKeyDown(jumpKey) && IsGrounded())
             jump = true;
 
-        if (Input.GetKeyDown(crouchKey))
-            crouch = true;
-        else if (Input.GetKeyUp(crouchKey))
-            crouch = false;
+        animator.SetBool("Grounded", IsGrounded());
+        animator.SetFloat("VerticalVelocity", rb.velocity.y);
 
-        animator.SetBool("Jump", !IsCollide(feet, groundMask));
+        if (Input.GetKeyDown(crouchKey) && IsGrounded())
+            crouch = isCrouching = true;
+        else if (Input.GetKeyUp(crouchKey))
+        {
+            crouch = false;
+            isCrouching = HeadBump();
+        }
+        else if (!crouch && !HeadBump())
+            isCrouching = false;
     }
 
     private void FixedUpdate()
     {
-        Vector2 targetVelocity = 10f * velocity * Time.fixedDeltaTime * Vector2.right + Vector2.up * rb.velocity.y;
-        targetVelocity.x *= crouch? crouchSpeedFactor: 1;
-        rb.velocity = targetVelocity;
+        rb.velocity = velocity * Time.fixedDeltaTime * Vector2.right + rb.velocity.y * Vector2.up;
 
         if (jump)
         {
@@ -89,7 +106,7 @@ public class Player : MonoBehaviour
             jump = false;
         }
 
-        headCollider.enabled = !crouch;
-        animator.SetBool("Crouch", crouch);
+        headCollider.enabled = !isCrouching;
+        animator.SetBool("Crouch", isCrouching);
     }
 }

@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Game\Map\PlatformController.cs" />
+    <Compile Include="Assets\Scripts\Utils\Debugger.cs" />
     <Compile Include="Assets\Scripts\Game\Player.cs" />
   </ItemGroup>
   <ItemGroup>
