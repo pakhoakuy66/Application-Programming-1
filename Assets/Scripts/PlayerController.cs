@@ -1,7 +1,7 @@
 using Cinemachine;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Controller Settings")]
     public KeyCode moveLeftKey = KeyCode.LeftArrow;
@@ -16,20 +16,20 @@ public class Player : MonoBehaviour
     [SerializeField] private Collider2D feetCollider;
     [SerializeField] private Transform head;
     [SerializeField] private Transform feet;
-    [SerializeField] private Animator animator;
     [SerializeField] private LayerMask groundMask;
+
+    [Header("Optional Components")]
+    [SerializeField] private Animator animator;
+    public Transform spawnPoint;
 
     [Header("Player Settings")]
     [SerializeField] private float speed = 40f;
-    [SerializeField] private float jumpHeight = 3f;
-    [SerializeField] private float crouchSpeedFactor = .4f;
+    [SerializeField] private float jumpHeight = 4f;
+    [Range(.1f, .9f)] [SerializeField] private float crouchSpeedFactor = .4f;
 
+    private float velocity, jumpForce;
     private bool isFacingRight = true;
-    private float velocity;
-    private float jumpForce;
-    private bool jump = false;
-    private bool crouch = false;
-    private bool isCrouching = false;
+    private bool jump, crouch, isCrouching = false;
 
     private int Horizontal()
     {
@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics2D.gravity.y * rb.gravityScale));
+        if(spawnPoint != null) transform.position = spawnPoint.position;
     }
 
     private void Update()
@@ -71,19 +72,15 @@ public class Player : MonoBehaviour
         float speedFactor = isCrouching ? crouchSpeedFactor : 1;
         velocity = Horizontal() * speed * 10f * speedFactor;
 
-        animator.SetFloat("Speed", Mathf.Abs(velocity));
-
         if (isFacingRight && velocity < -.01 || !isFacingRight && velocity > .01)
         {
             isFacingRight = !isFacingRight;
             Flip();
         }
 
-        if (Input.GetKeyDown(jumpKey) && IsGrounded())
+        if (Input.GetKeyDown(jumpKey) && IsGrounded() && !isCrouching)
             jump = true;
 
-        animator.SetBool("Grounded", IsGrounded());
-        animator.SetFloat("VerticalVelocity", rb.velocity.y);
 
         if (Input.GetKeyDown(crouchKey) && IsGrounded())
             crouch = isCrouching = true;
@@ -94,6 +91,13 @@ public class Player : MonoBehaviour
         }
         else if (!crouch && !HeadBump())
             isCrouching = false;
+
+        if(animator != null)
+        {
+            animator.SetFloat("Speed", Mathf.Abs(velocity));
+            animator.SetBool("Grounded", IsGrounded());
+            animator.SetFloat("VerticalVelocity", rb.velocity.y);
+        }
     }
 
     private void FixedUpdate()
@@ -107,6 +111,8 @@ public class Player : MonoBehaviour
         }
 
         headCollider.enabled = !isCrouching;
-        animator.SetBool("Crouch", isCrouching);
+
+        if(animator != null)
+            animator.SetBool("Crouch", isCrouching);
     }
 }

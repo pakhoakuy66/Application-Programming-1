@@ -4,21 +4,21 @@ public class PlatformController : MonoBehaviour
 {
     [SerializeField] private Transform posA, posB;
     [SerializeField] private int speed;
-    [SerializeField] private Transform playerStand;
-    [SerializeField] private Collider2D objectCollider;
-    [SerializeField] private Player player;
-    [SerializeField] private LayerMask playerMask;
+    [SerializeField] private string playerTag = "Player";
+    [SerializeField] private BoxCollider2D objectCollider;
 
     private Vector2 targetPos;
-    private Vector2 castSize;
-
-    private const float castHeight = .1f;
+    private float colliderHeight = .2f;
+    private BoxCollider2D triggerCollider;
 
     private void Awake()
     {
         targetPos = posB.position;
         posA.parent = posB.parent = null;
-        castSize = new Vector2(objectCollider.bounds.size.x, castHeight);
+        triggerCollider = gameObject.AddComponent<BoxCollider2D>();
+        triggerCollider.isTrigger = true;
+        triggerCollider.size = new Vector2(objectCollider.size.x, colliderHeight);
+        triggerCollider.offset = new Vector2(0, objectCollider.size.y / 2 - colliderHeight / 2);
     }
 
     private void Update()
@@ -26,14 +26,22 @@ public class PlatformController : MonoBehaviour
         if (Vector2.Distance(transform.position, posA.position) < 1f) targetPos = posB.position;
 
         if (Vector2.Distance(transform.position, posB.position) < 1f) targetPos = posA.position;
-
-        if (Physics2D.BoxCast(playerStand.position, castSize, 0f, Vector2.up, 0f, playerMask))
-            player.transform.parent = transform;
-        else player.transform.parent = null;
     }
 
     private void FixedUpdate()
     {
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.fixedDeltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag(playerTag))
+            collision.gameObject.transform.parent = transform;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag(playerTag))
+            collision.gameObject.transform.parent = null;
     }
 }
