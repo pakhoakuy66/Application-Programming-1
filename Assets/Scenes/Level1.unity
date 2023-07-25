@@ -22988,7 +22988,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: -1000
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -25009,6 +25009,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1570370182 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2872145022774638806, guid: 24da90a356fbae4479298122dd539a23, type: 3}
+  m_PrefabInstance: {fileID: 1951089364971898488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1577916197
 GameObject:
   m_ObjectHideFlags: 0
@@ -27781,6 +27786,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 506762995834589388, guid: 24da90a356fbae4479298122dd539a23, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1802921653670798832, guid: 24da90a356fbae4479298122dd539a23, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1570370182}
+    - target: {fileID: 1802921653670798832, guid: 24da90a356fbae4479298122dd539a23, type: 3}
+      propertyPath: m_Lens.NearClipPlane
+      value: -1000
+      objectReference: {fileID: 0}
     - target: {fileID: 2872145022774638806, guid: 24da90a356fbae4479298122dd539a23, type: 3}
       propertyPath: m_RootOrder
       value: 2

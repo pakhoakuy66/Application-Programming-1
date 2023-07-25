@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -30,7 +31,10 @@ public class PlayerController : MonoBehaviour
 
     private float velocity, jumpForce;
     private bool isFacingRight = true;
-    private bool jump, crouch, isCrouching = false;
+    private bool isAlive = true;
+    private bool jump = false;
+    private bool crouch = false;
+    private bool isCrouching = false;
 
     private int Horizontal()
     {
@@ -64,7 +68,15 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("Ded");
+        isAlive = false;
+        headCollider.enabled = feetCollider.enabled = false;
+        rb.velocity = Vector2.zero;
+        rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
+        if (animator != null)
+        {
+            animator.SetFloat("VerticalVelocity", 0);
+            animator.SetBool("Hurt", true);
+        }
     }
 
     private void Awake()
@@ -75,6 +87,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (!isAlive) return;
         float speedFactor = isCrouching ? crouchSpeedFactor : 1;
         velocity = Horizontal() * speed * 10f * speedFactor;
 
@@ -111,6 +124,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!isAlive) return;
         rb.velocity = new Vector2(velocity * Time.fixedDeltaTime, rb.velocity.y);
 
         if (jump)
