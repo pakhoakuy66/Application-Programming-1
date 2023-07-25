@@ -198,7 +198,7 @@ Transform:
   - {fileID: 6277998248656673289}
   - {fileID: 506762995834589388}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &139724494358378257
 SpriteRenderer:
@@ -402,14 +402,16 @@ MonoBehaviour:
   feetCollider: {fileID: 3007564663629818081}
   head: {fileID: 2579562852618877403}
   feet: {fileID: 6277998248656673289}
-  animator: {fileID: 4912546293919193740}
   groundMask:
     serializedVersion: 2
     m_Bits: 55
+  animator: {fileID: 4912546293919193740}
+  spawnPoint: {fileID: 0}
   speed: 40
   jumpHeight: 4
   crouchSpeedFactor: 0.4
-  spawnPoint: {fileID: 0}
+  headCastRadius: 0.2
+  feetCastRadius: 0.2
 --- !u!1 &9019787997410333907
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9019787997410333907}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.9, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

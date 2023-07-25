@@ -4,12 +4,12 @@ public class PlatformController : MonoBehaviour
 {
     [SerializeField] private Transform posA, posB;
     [SerializeField] private int speed;
-    [SerializeField] private string playerTag = "Player";
     [SerializeField] private BoxCollider2D objectCollider;
 
     private Vector2 targetPos;
-    private float colliderHeight = .2f;
     private BoxCollider2D triggerCollider;
+
+    private const float COLLIDERHEIGHT = .2f;
 
     private void Awake()
     {
@@ -17,8 +17,8 @@ public class PlatformController : MonoBehaviour
         posA.parent = posB.parent = null;
         triggerCollider = gameObject.AddComponent<BoxCollider2D>();
         triggerCollider.isTrigger = true;
-        triggerCollider.size = new Vector2(objectCollider.size.x, colliderHeight);
-        triggerCollider.offset = new Vector2(0, objectCollider.size.y / 2 - colliderHeight / 2);
+        triggerCollider.size = new Vector2(objectCollider.size.x, COLLIDERHEIGHT);
+        triggerCollider.offset = new Vector2(0, objectCollider.size.y / 2 - COLLIDERHEIGHT / 2);
     }
 
     private void Update()
@@ -35,13 +35,13 @@ public class PlatformController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag(playerTag))
-            collision.gameObject.transform.parent = transform;
+        if (collision.gameObject.TryGetComponent<PlayerController>(out var player))
+            player.transform.parent = transform;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag(playerTag))
-            collision.gameObject.transform.parent = null;
+        if (collision.gameObject.TryGetComponent<PlayerController>(out var player))
+            player.transform.parent = null;
     }
 }
