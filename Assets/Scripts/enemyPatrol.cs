@@ -1,44 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class enemyPatrol : MonoBehaviour
 {
-    [SerializeField] private Transform pointA;
-    [SerializeField] private Transform pointB;
+    [SerializeField] private Transform posA;
+    [SerializeField] private Transform posB;
     [SerializeField] float speed;
 
     private Vector2 targetPos;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
-        targetPos = pointA.position;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        targetPos = posA.position;
+        if (Vector2.Distance(transform.position, posB.position) < 1f)
+            targetPos = posB.position;
+        else
+            spriteRenderer.flipX = true;
     }
 
     void Update()
     {
-        if(Vector2.Distance(transform.position, pointA.position) < 1f)
-        {
-            Flip();
-            targetPos = pointB.position;
-        }
+        if (Vector2.Distance(transform.position, posA.position) < 1f) targetPos = posB.position;
 
-        if (Vector2.Distance(transform.position, pointB.position) < 1f)
-        {
-            Flip();
-            targetPos = pointA.position;
-        }
+        if (Vector2.Distance(transform.position, posB.position) < 1f) targetPos = posA.position;
+
+        if(spriteRenderer.flipX && Vector2.Distance(transform.position, posA.position) < 1f || !spriteRenderer.flipX && Vector2.Distance(transform.position, posB.position) < 1f)
+            spriteRenderer.flipX = !spriteRenderer.flipX;
     }
 
     private void FixedUpdate()
     {
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.fixedDeltaTime);
-    }
-
-    private void Flip()
-    {
-        Vector3 localScale = transform.localScale;
-        localScale.x *= -1;
-        transform.localScale = localScale;
     }
 }
