@@ -1,7 +1,7 @@
-using Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Controller Settings")]
     public KeyCode moveLeftKey = KeyCode.LeftArrow;
@@ -16,17 +16,22 @@ public class Player : MonoBehaviour
     [SerializeField] private Collider2D feetCollider;
     [SerializeField] private Transform head;
     [SerializeField] private Transform feet;
-    [SerializeField] private Animator animator;
     [SerializeField] private LayerMask groundMask;
 
-    [Header("Player Settings")]
-    [SerializeField] private float speed = 40f;
-    [SerializeField] private float jumpHeight = 3f;
-    [SerializeField] private float crouchSpeedFactor = .4f;
+    [Header("Optional Components")]
+    [SerializeField] private Animator animator;
+    public Transform spawnPoint;
 
+    [Header("Player Settings")]
+    [Range(10f, 100f)] [SerializeField] private float speed = 40f;
+    [Range(1f, 10f)] [SerializeField] private float jumpHeight = 4f;
+    [Range(.1f, .9f)] [SerializeField] private float crouchSpeedFactor = .4f;
+    [Range(.1f, .9f)] [SerializeField] private float headCastRadius = .2f;
+    [Range(.1f, .9f)] [SerializeField] private float feetCastRadius = .2f;
+
+    private float velocity, jumpForce;
     private bool isFacingRight = true;
-    private float velocity;
-    private float jumpForce;
+    private bool isAlive = true;
     private bool jump = false;
     private bool crouch = false;
     private bool isCrouching = false;
@@ -53,25 +58,38 @@ public class Player : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return CircleCastHit(feet, .2f);
+        return CircleCastHit(feet, feetCastRadius);
     }
 
     private bool HeadBump()
     {
-        return CircleCastHit(head, .2f);
+        return CircleCastHit(head, headCastRadius);
+    }
+
+    public void Die()
+    {
+        isAlive = false;
+        headCollider.enabled = feetCollider.enabled = false;
+        rb.velocity = Vector2.zero;
+        rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
+        if (animator != null)
+        {
+            animator.SetFloat("VerticalVelocity", 0);
+            animator.SetBool("Hurt", true);
+        }
     }
 
     private void Awake()
     {
         jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics2D.gravity.y * rb.gravityScale));
+        if(spawnPoint != null) transform.position = spawnPoint.position;
     }
 
     private void Update()
     {
+        if (!isAlive) return;
         float speedFactor = isCrouching ? crouchSpeedFactor : 1;
         velocity = Horizontal() * speed * 10f * speedFactor;
-
-        animator.SetFloat("Speed", Mathf.Abs(velocity));
 
         if (isFacingRight && velocity < -.01 || !isFacingRight && velocity > .01)
         {
@@ -82,11 +100,11 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(jumpKey) && IsGrounded())
             jump = true;
 
-        animator.SetBool("Grounded", IsGrounded());
-        animator.SetFloat("VerticalVelocity", rb.velocity.y);
-
-        if (Input.GetKeyDown(crouchKey) && IsGrounded())
-            crouch = isCrouching = true;
+        if (Input.GetKey(crouchKey))
+        {
+            crouch = true;
+            isCrouching = IsGrounded();
+        }
         else if (Input.GetKeyUp(crouchKey))
         {
             crouch = false;
@@ -94,19 +112,28 @@ public class Player : MonoBehaviour
         }
         else if (!crouch && !HeadBump())
             isCrouching = false;
+
+        if(animator != null)
+        {
+            animator.SetFloat("Speed", Mathf.Abs(velocity));
+            animator.SetBool("Grounded", IsGrounded());
+            animator.SetFloat("VerticalVelocity", rb.velocity.y);
+            animator.SetBool("Crouch", isCrouching);
+        }
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = velocity * Time.fixedDeltaTime * Vector2.right + rb.velocity.y * Vector2.up;
+        if (!isAlive) return;
+        rb.velocity = new Vector2(velocity * Time.fixedDeltaTime, rb.velocity.y);
 
         if (jump)
         {
+            rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             jump = false;
         }
 
         headCollider.enabled = !isCrouching;
-        animator.SetBool("Crouch", isCrouching);
     }
 }
