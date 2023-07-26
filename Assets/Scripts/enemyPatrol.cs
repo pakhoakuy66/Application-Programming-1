@@ -4,58 +4,41 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public GameObject pointA;
-    public GameObject pointB;
-    private Rigidbody2D rb;
-    private Animator anim;
-    private Transform currentPoint;
-    public float speed;
-   
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Transform pointA;
+    [SerializeField] private Transform pointB;
+    [SerializeField] float speed;
+
+    private Vector2 targetPos;
+
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        currentPoint = pointB.transform;
-        anim.SetBool("isRunning", true);
+        targetPos = pointA.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Vector2 point = currentPoint.position - transform.position;
-        if(currentPoint == pointB.transform)
+        if(Vector2.Distance(transform.position, pointA.position) < 1f)
         {
-            rb.velocity= new Vector2(speed,0);
+            Flip();
+            targetPos = pointB.position;
+        }
 
-        }
-        else
-        {
-            rb.velocity = new Vector2(-speed,0);
-        }
-        
-        if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
+        if (Vector2.Distance(transform.position, pointB.position) < 1f)
         {
             Flip();
-            currentPoint =  pointA.transform;
-        }
-        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
-        {
-            Flip();
-            currentPoint = pointA.transform;
+            targetPos = pointA.position;
         }
     }
+
+    private void FixedUpdate()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.fixedDeltaTime);
+    }
+
     private void Flip()
     {
-        Vector3 localSacle = transform.localScale;
-        localSacle.x *= -1;
-        transform.localScale = localSacle;
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(pointA.transform.position, 0.5f);
-        Gizmos.DrawWireSphere(pointB.transform.position, 0.5f);
-        Gizmos.DrawLine(pointA.transform.position, pointA.transform.position);
-
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 }
