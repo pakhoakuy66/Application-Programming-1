@@ -2,3 +2,6 @@
 /Logs
 /UserSettings
 /Temp
+/.vs
+.vsconfig
+*.sln
