@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpikesKill : MonoBehaviour
+public class SpikeKill : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
