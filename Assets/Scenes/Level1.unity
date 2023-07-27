@@ -31402,6 +31402,10 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 789117970}
+    - target: {fileID: 6294822083188487757, guid: 24da90a356fbae4479298122dd539a23, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1951089364971898489}
     - target: {fileID: 7956314351183734278, guid: 24da90a356fbae4479298122dd539a23, type: 3}
       propertyPath: m_Name
       value: Player
@@ -31411,3 +31415,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24da90a356fbae4479298122dd539a23, type: 3}
+--- !u!212 &1951089364971898489 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 139724494358378257, guid: 24da90a356fbae4479298122dd539a23, type: 3}
+  m_PrefabInstance: {fileID: 1951089364971898488}
+  m_PrefabAsset: {fileID: 0}

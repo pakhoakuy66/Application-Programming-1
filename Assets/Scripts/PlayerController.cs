@@ -1,4 +1,6 @@
-using Unity.VisualScripting;
+using System;
+using System.Collections;
+using Cinemachine;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -17,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform head;
     [SerializeField] private Transform feet;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     [Header("Optional Components")]
     [SerializeField] private Animator animator;
@@ -28,9 +31,9 @@ public class PlayerController : MonoBehaviour
     [Range(.1f, .9f)] [SerializeField] private float crouchSpeedFactor = .4f;
     [Range(.1f, .9f)] [SerializeField] private float headCastRadius = .2f;
     [Range(.1f, .9f)] [SerializeField] private float feetCastRadius = .2f;
+    [Range(0f, 1f)] [SerializeField] private float deathStopCamDelay = .5f;
 
     private float velocity, jumpForce;
-    private bool isFacingRight = true;
     private bool isAlive = true;
     private bool jump = false;
     private bool crouch = false;
@@ -41,13 +44,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(moveLeftKey)) return -1;
         if (Input.GetKey(moveRightKey)) return 1;
         return 0;
-    }
-
-    private void Flip()
-    {
-        Vector2 flipScale = transform.localScale;
-        flipScale.x *= -1;
-        transform.localScale = flipScale;
     }
 
     private bool CircleCastHit(Transform transform, float radius)
@@ -66,12 +62,20 @@ public class PlayerController : MonoBehaviour
         return CircleCastHit(head, headCastRadius);
     }
 
+    private IEnumerator WaitAndExecute(float waitTime, Action callBack)
+    {
+        yield return new WaitForSeconds(waitTime);
+        callBack.Invoke();
+    }
+
     public void Die()
     {
         isAlive = false;
         headCollider.enabled = feetCollider.enabled = false;
         rb.velocity = Vector2.zero;
         rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
+        CinemachineVirtualCamera vcam = GetComponentInChildren<CinemachineVirtualCamera>();
+        StartCoroutine(WaitAndExecute(deathStopCamDelay, () => vcam.Follow = vcam.transform.parent = null));
         if (animator != null)
         {
             animator.SetFloat("VerticalVelocity", 0);
@@ -91,11 +95,8 @@ public class PlayerController : MonoBehaviour
         float speedFactor = isCrouching ? crouchSpeedFactor : 1;
         velocity = Horizontal() * speed * 10f * speedFactor;
 
-        if (isFacingRight && velocity < -.01 || !isFacingRight && velocity > .01)
-        {
-            isFacingRight = !isFacingRight;
-            Flip();
-        }
+        if (!spriteRenderer.flipX && velocity < -.01 || spriteRenderer.flipX && velocity > .01)
+            spriteRenderer.flipX = !spriteRenderer.flipX;
 
         if (Input.GetKeyDown(jumpKey) && IsGrounded())
             jump = true;
