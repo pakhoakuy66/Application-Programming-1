@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class SpikesKill : MonoBehaviour
+public class SpikeKill : MonoBehaviour
 {
     [SerializeField] private float stopCamDelay = .5f;
 
