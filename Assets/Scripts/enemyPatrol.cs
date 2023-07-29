@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class enemyPatrol : MonoBehaviour
+public class EnemyPatrol : MonoBehaviour
 {
     [SerializeField] private Transform posA;
     [SerializeField] private Transform posB;
@@ -32,5 +32,11 @@ public class enemyPatrol : MonoBehaviour
     private void FixedUpdate()
     {
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.fixedDeltaTime);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent<PlayerController>(out var player))
+            player.Die();
     }
 }
