@@ -58,10 +58,18 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.1f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\Game\Map\PlatformController.cs" />
     <Compile Include="Assets\Scripts\Game\Map\spikesMoving.cs" />
     <Compile Include="Assets\Scripts\Utils\Debugger.cs" />
     <Compile Include="Assets\Scripts\Game\Player.cs" />
+=======
+    <Compile Include="Assets\Scripts\SpikesKill.cs" />
+    <Compile Include="Assets\Scripts\PlatformController.cs" />
+    <Compile Include="Assets\Scripts\Debugger.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\EnemyPatrol.cs" />
+>>>>>>> 747959a7c4fa0473d9e114c7b68ba3c961a29407
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
