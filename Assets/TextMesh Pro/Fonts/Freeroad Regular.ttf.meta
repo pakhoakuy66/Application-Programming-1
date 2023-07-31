@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 0c2a58decfc47584587ef45dcd5b4267
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Freeroad
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 596c9150907594844814e7a1b15ab45d, type: 3}
+  - {fileID: 12800000, guid: e33fcfea4a04ecc4fba1f03a0e479fa2, type: 3}
+  - {fileID: 12800000, guid: d347e39457dfedb4e867235e0e6fad99, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
