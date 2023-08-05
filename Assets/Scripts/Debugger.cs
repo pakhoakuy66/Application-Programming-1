@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public static class Debugger
@@ -9,9 +8,15 @@ public static class Debugger
         float angle = 0f;
         for (int i = 0; i < segments; i++)
         {
-            Vector3 start = center + new Vector3(Mathf.Sin(Mathf.Deg2Rad * angle), Mathf.Cos(Mathf.Deg2Rad * angle), 0) * radius;
+            Vector3 start =
+                center
+                + new Vector3(Mathf.Sin(Mathf.Deg2Rad * angle), Mathf.Cos(Mathf.Deg2Rad * angle), 0)
+                    * radius;
             angle += 360f / segments;
-            Vector3 end = center + new Vector3(Mathf.Sin(Mathf.Deg2Rad * angle), Mathf.Cos(Mathf.Deg2Rad * angle), 0) * radius;
+            Vector3 end =
+                center
+                + new Vector3(Mathf.Sin(Mathf.Deg2Rad * angle), Mathf.Cos(Mathf.Deg2Rad * angle), 0)
+                    * radius;
             Debug.DrawLine(start, end, color);
         }
     }
@@ -28,5 +33,4 @@ public static class Debugger
         Debug.DrawLine(bottomRight, bottomLeft, color);
         Debug.DrawLine(bottomLeft, topLeft, color);
     }
-
 }

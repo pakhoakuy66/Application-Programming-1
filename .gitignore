@@ -3,5 +3,6 @@
 /UserSettings
 /Temp
 /.vs
+/.vscode
 .vsconfig
 *.sln

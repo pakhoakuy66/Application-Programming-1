@@ -6,13 +6,15 @@ using UnityEngine.Audio;
 
 public class musicsetting : MonoBehaviour
 {
-    [SerializeField] private AudioMixer musicSource;
-    [SerializeField] private Slider musicSlider;
-   
+    [SerializeField]
+    private AudioMixer musicSource;
+
+    [SerializeField]
+    private Slider musicSlider;
 
     private void Start()
     {
-        if(PlayerPrefs.HasKey("musicVolume"))
+        if (PlayerPrefs.HasKey("musicVolume"))
         {
             Loadvolume();
         }
@@ -20,31 +22,24 @@ public class musicsetting : MonoBehaviour
         {
             SetMusicVolume();
         }
-       
     }
-    void start()
-    {
-        
-    }
-  
+
+    void start() { }
 
     public void SetMusicVolume()
     {
         float volume = musicSlider.value;
-        musicSource.SetFloat("music", Mathf.Log10(volume)*20);
+        musicSource.SetFloat("music", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("musicVolume", volume);
     }
+
     public void Loadvolume()
     {
         musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
         SetMusicVolume();
     }
-    public void Onmusicbuttonclick()
-    {
-      
-    }
-    public void Offmusic()
-    {
-        
-    }
+
+    public void Onmusicbuttonclick() { }
+
+    public void Offmusic() { }
 }

@@ -12,12 +12,12 @@ public class bightness : MonoBehaviour
 
     AutoExposure exposure;
 
-     void Start()
+    void Start()
     {
-       
         brightness.TryGetSettings(out exposure);
         AdjustBrightness(bightnessSlider.value);
     }
+
     public void AdjustBrightness(float value)
     {
         if (value != 0)

@@ -8,6 +8,7 @@ public class settingdisplay : MonoBehaviour
     {
         Screen.fullScreen = isFullscreen;
     }
+
     public void setQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);

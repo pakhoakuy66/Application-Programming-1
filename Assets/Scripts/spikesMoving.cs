@@ -1,9 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class spikesMoving : MonoBehaviour
+public class SpikesMoving : MonoBehaviour
 {
     public float speed;
     Vector3 targetPos;
@@ -20,7 +18,7 @@ public class spikesMoving : MonoBehaviour
     private void Awake()
     {
         waysPoint = new Transform[ways.transform.childCount];
-        for(int i = 0; i < ways.gameObject.transform.childCount; i++)
+        for (int i = 0; i < ways.gameObject.transform.childCount; i++)
         {
             waysPoint[i] = ways.transform.GetChild(i).gameObject.transform;
         }
@@ -38,7 +36,7 @@ public class spikesMoving : MonoBehaviour
         var step = speedMultiplier * speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
 
-        if(transform.position == targetPos)
+        if (transform.position == targetPos)
         {
             NextPoints();
         }
@@ -46,12 +44,12 @@ public class spikesMoving : MonoBehaviour
 
     void NextPoints()
     {
-        if(pointIndex == pointCount - 1) //Arrived last point
+        if (pointIndex == pointCount - 1) //Arrived last point
         {
             derection = -1;
         }
 
-        if(pointIndex == 0) //Arrived first point
+        if (pointIndex == 0) //Arrived first point
         {
             derection = 1;
         }

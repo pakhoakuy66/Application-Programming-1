@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class musicimg : MonoBehaviour
-
 {
     private Sprite soundonimage;
     public Sprite soundoffimage;
@@ -12,6 +11,7 @@ public class musicimg : MonoBehaviour
     private bool ison = true;
 
     public AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +19,8 @@ public class musicimg : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void Update() { }
+
     public void ButtonClicked()
     {
         if (ison)
@@ -30,7 +28,6 @@ public class musicimg : MonoBehaviour
             button.image.sprite = soundoffimage;
             ison = false;
             audioSource.mute = true;
-
         }
         else
         {

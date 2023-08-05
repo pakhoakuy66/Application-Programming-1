@@ -4,14 +4,17 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class loading : MonoBehaviour
-    
 {
     [Header("Menu Screens")]
-    [SerializeField] private GameObject loadingscreen;
-    [SerializeField] private GameObject mainmenu;
+    [SerializeField]
+    private GameObject loadingscreen;
+
+    [SerializeField]
+    private GameObject mainmenu;
 
     [Header("slider")]
-    [SerializeField] private Slider loadingslider;
+    [SerializeField]
+    private Slider loadingslider;
 
     public void loadlevelbtn(string leveltoload)
     {
@@ -20,14 +23,15 @@ public class loading : MonoBehaviour
 
         StartCoroutine(loadLevelASync(leveltoload));
     }
+
     IEnumerator loadLevelASync(string leveltoload)
     {
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(leveltoload);
 
-        while(!loadOperation.isDone)
+        while (!loadOperation.isDone)
         {
             float progressValue = Mathf.Clamp01(loadingslider.value + Time.deltaTime);
-            loadingslider.value = progressValue*2f;
+            loadingslider.value = progressValue * 2f;
             yield return null;
         }
     }

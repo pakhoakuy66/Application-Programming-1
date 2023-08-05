@@ -1,0 +1,84 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETStandard,Version=v2.0": {
+      "AstarPathfindingProject/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/AstarPathfindingProject.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AstarPathfindingProject.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AstarPathfindingProject/1.0.0": {
+      "type": "project",
+      "path": "AstarPathfindingProject.csproj",
+      "msbuildProject": "AstarPathfindingProject.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETStandard,Version=v2.0": [
+      "AstarPathfindingProject >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\DELL\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj",
+      "projectName": "PackageToolsEditor",
+      "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "netstandard2.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "projectReferences": {
+            "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {
+              "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netstandard2.0": {
+        "targetAlias": "netstandard2.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.109\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
