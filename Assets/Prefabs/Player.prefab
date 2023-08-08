@@ -198,7 +198,7 @@ Transform:
   - {fileID: 6277998248656673289}
   - {fileID: 506762995834589388}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &139724494358378257
 SpriteRenderer:
@@ -394,7 +394,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveLeftKey: 276
   moveRightKey: 275
-  climbKey: 273
+  climbUpKey: 273
+  climbDownKey: 274
   jumpKey: 32
   crouchKey: 306
   rb: {fileID: 644444461977388002}

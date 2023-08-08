@@ -864,6 +864,10 @@ PrefabInstance:
       value: Ladder Repr
       objectReference: {fileID: 0}
     - target: {fileID: 1008551700727722603, guid: 17924526e80eae8418da50b288c7a23f, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008551700727722603, guid: 17924526e80eae8418da50b288c7a23f, type: 3}
       propertyPath: m_Size.y
       value: 4.75
       objectReference: {fileID: 0}

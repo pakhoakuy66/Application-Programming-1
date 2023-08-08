@@ -38,9 +38,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
-    [Header("Optional Components")]
-    public Transform spawnPoint;
-
     [Header("Player Settings")]
     [Range(10f, 100f)]
     [SerializeField]
@@ -159,8 +156,6 @@ public class PlayerController : MonoBehaviour
     {
         jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics2D.gravity.y * rb.gravityScale));
         defaultGScale = rb.gravityScale;
-        if (spawnPoint != null)
-            spawnPosition = spawnPoint.position;
         if (spawnPosition != Vector2.right * -9999)
             transform.position = spawnPosition;
     }
