@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\GUIs\sound.cs" />
     <Compile Include="Assets\Scripts\SpikesKill.cs" />
+    <Compile Include="Assets\Pausemenu.cs" />
     <Compile Include="Assets\Scripts\GUIs\audiomanager.cs" />
     <Compile Include="Assets\Scripts\PlatformController.cs" />
     <Compile Include="Assets\Scripts\GUIs\musicsetting.cs" />
