@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -63,6 +64,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float deathStopCamDelay = .5f;
 
+    [SerializeField]
+    private int jumpCount = 1;
+
+    private int jumpAbleCount;
     private float horizontalVelocity,
         verticalVelocity,
         jumpForce;
@@ -73,12 +78,7 @@ public class PlayerController : MonoBehaviour
     private bool climbAble = false;
     private bool isClimbing = false;
     private float defaultGScale;
-    private Vector2 spawnPosition = Vector2.right * -9999;
-
-    public Vector2 SpawnPosition
-    {
-        set => spawnPosition = value;
-    }
+    private bool isJumping = false;
 
     private int Horizontal()
     {
@@ -120,6 +120,11 @@ public class PlayerController : MonoBehaviour
         return CircleCastHit(head, headCastRadius);
     }
 
+    private bool IsFalling()
+    {
+        return !IsGrounded() && !isJumping;
+    }
+
     private IEnumerator WaitAndExecute(float waitTime, Action callBack)
     {
         yield return new WaitForSeconds(waitTime);
@@ -147,7 +152,19 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         CinemachineVirtualCamera vcam = GetComponentInChildren<CinemachineVirtualCamera>();
         StartCoroutine(
-            WaitAndExecute(deathStopCamDelay, () => vcam.Follow = vcam.transform.parent = null)
+            WaitAndExecute(
+                deathStopCamDelay,
+                () =>
+                {
+                    vcam.Follow = vcam.transform.parent = null;
+                    StartCoroutine(
+                        WaitAndExecute(
+                            deathStopCamDelay,
+                            () => SceneManager.LoadScene(SceneManager.GetActiveScene().name)
+                        )
+                    );
+                }
+            )
         );
         animator.SetBool("Hurt", true);
     }
@@ -156,8 +173,7 @@ public class PlayerController : MonoBehaviour
     {
         jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics2D.gravity.y * rb.gravityScale));
         defaultGScale = rb.gravityScale;
-        if (spawnPosition != Vector2.right * -9999)
-            transform.position = spawnPosition;
+        jumpAbleCount = jumpCount;
     }
 
     private void Update()
@@ -173,7 +189,7 @@ public class PlayerController : MonoBehaviour
         )
             spriteRenderer.flipX = !spriteRenderer.flipX;
 
-        if (Input.GetKeyDown(jumpKey) && IsGrounded())
+        if (Input.GetKeyDown(jumpKey) && jumpAbleCount > 0 && (!IsFalling() || isClimbing))
             jump = true;
 
         if (Input.GetKey(crouchKey))
@@ -207,6 +223,12 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (CircleCastHit(feet, .05f) || isClimbing)
+        {
+            jumpAbleCount = jumpCount;
+            isJumping = false;
+        }
+
         animator.SetFloat("Speed", Mathf.Abs(horizontalVelocity));
         animator.SetBool("Grounded", IsGrounded());
         animator.SetFloat("VerticalVelocity", rb.velocity.y);
@@ -222,9 +244,11 @@ public class PlayerController : MonoBehaviour
 
         if (jump)
         {
+            jumpAbleCount--;
             rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             jump = false;
+            isJumping = true;
             isClimbing = false;
         }
 
