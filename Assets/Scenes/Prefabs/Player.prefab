@@ -143,8 +143,8 @@ MonoBehaviour:
   m_Follow: {fileID: 2872145022774638806}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 4
-    NearClipPlane: -1000
+    OrthographicSize: 6
+    NearClipPlane: 0.01
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
@@ -408,13 +408,13 @@ MonoBehaviour:
     m_Bits: 55
   spriteRenderer: {fileID: 139724494358378257}
   animator: {fileID: 4912546293919193740}
-  spawnPoint: {fileID: 0}
   speed: 40
   jumpHeight: 4
   crouchSpeedFactor: 0.4
   headCastRadius: 0.2
   feetCastRadius: 0.2
   deathStopCamDelay: 0.5
+  jumpCount: 1
 --- !u!1 &9019787997410333907
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "W5/rbMrJWjJFMX8cEiGrvVe3MrAr5t8JgFL2N6rKnnND6KC8yWxFjx2ZzSl8MKr2dxoM+apsy1KbYlUBq9gu0w==",
+=======
+  "dgSpecHash": "y9KMt1jakTPCpBhB6BsOZ/q6OQo1IoEL5P/ESFcmsj2eGjIK4afMzdyuw6cmI+zsibZ+LlmzOo0XOAY/fchj8w==",
+>>>>>>> bfa1a8655e04a0c3201c7eb4423d117f0ea2e422
   "success": true,
   "projectFilePath": "d:\\Game\\Application-Programming-1\\Assembly-CSharp.csproj",
   "expectedPackageFiles": [],
