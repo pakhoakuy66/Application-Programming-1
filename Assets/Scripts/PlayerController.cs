@@ -223,7 +223,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (CircleCastHit(feet, .05f) || isClimbing)
+        if (CircleCastHit(feet, .01f) || isClimbing)
         {
             jumpAbleCount = jumpCount;
             isJumping = false;
