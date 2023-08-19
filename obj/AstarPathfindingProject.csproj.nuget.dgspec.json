@@ -1,6 +1,19 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {}
+  },
+  "projects": {
+    "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj",
+        "projectName": "AstarPathfindingProject",
+        "projectPath": "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "d:\\Game\\Application-Programming-1\\obj\\",
+=======
     "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {}
   },
   "projects": {
@@ -12,6 +25,7 @@
         "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
         "outputPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\",
+>>>>>>> bfa1a8655e04a0c3201c7eb4423d117f0ea2e422
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -48,7 +62,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+=======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.110\\RuntimeIdentifierGraph.json"
+>>>>>>> bfa1a8655e04a0c3201c7eb4423d117f0ea2e422
         }
       }
     }

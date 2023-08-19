@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "e:\\VL\\ApplicationProgramming\\Application Programming 1\\Assembly-CSharp.csproj": {}
+    "d:\\Game\\Application-Programming-1\\Assembly-CSharp.csproj": {}
   },
   "projects": {
-    "e:\\VL\\ApplicationProgramming\\Application Programming 1\\Assembly-CSharp.csproj": {
+    "d:\\Game\\Application-Programming-1\\Assembly-CSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\Assembly-CSharp.csproj",
+        "projectUniqueName": "d:\\Game\\Application-Programming-1\\Assembly-CSharp.csproj",
         "projectName": "Assembly-CSharp",
-        "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\Assembly-CSharp.csproj",
+        "projectPath": "d:\\Game\\Application-Programming-1\\Assembly-CSharp.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\",
+        "outputPath": "d:\\Game\\Application-Programming-1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,14 +26,14 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {
-                "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj"
+              "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
+                "projectPath": "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj"
               },
-              "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj": {
-                "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj"
+              "d:\\Game\\Application-Programming-1\\AstarPathfindingProjectEditor.csproj": {
+                "projectPath": "d:\\Game\\Application-Programming-1\\AstarPathfindingProjectEditor.csproj"
               },
-              "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj": {
-                "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj"
+              "d:\\Game\\Application-Programming-1\\PackageToolsEditor.csproj": {
+                "projectPath": "d:\\Game\\Application-Programming-1\\PackageToolsEditor.csproj"
               }
             }
           }
@@ -58,18 +58,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.110\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {
+    "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj",
+        "projectUniqueName": "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj",
         "projectName": "AstarPathfindingProject",
-        "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj",
+        "projectPath": "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\",
+        "outputPath": "d:\\Game\\Application-Programming-1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -106,18 +106,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.110\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj": {
+    "d:\\Game\\Application-Programming-1\\AstarPathfindingProjectEditor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj",
+        "projectUniqueName": "d:\\Game\\Application-Programming-1\\AstarPathfindingProjectEditor.csproj",
         "projectName": "AstarPathfindingProjectEditor",
-        "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj",
+        "projectPath": "d:\\Game\\Application-Programming-1\\AstarPathfindingProjectEditor.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\",
+        "outputPath": "d:\\Game\\Application-Programming-1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -132,11 +132,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {
-                "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj"
+              "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
+                "projectPath": "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj"
               },
-              "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj": {
-                "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj"
+              "d:\\Game\\Application-Programming-1\\PackageToolsEditor.csproj": {
+                "projectPath": "d:\\Game\\Application-Programming-1\\PackageToolsEditor.csproj"
               }
             }
           }
@@ -161,18 +161,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.110\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj": {
+    "d:\\Game\\Application-Programming-1\\PackageToolsEditor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj",
+        "projectUniqueName": "d:\\Game\\Application-Programming-1\\PackageToolsEditor.csproj",
         "projectName": "PackageToolsEditor",
-        "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj",
+        "projectPath": "d:\\Game\\Application-Programming-1\\PackageToolsEditor.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\",
+        "outputPath": "d:\\Game\\Application-Programming-1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -187,8 +187,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {
-                "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj"
+              "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
+                "projectPath": "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj"
               }
             }
           }
@@ -213,7 +213,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.110\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
