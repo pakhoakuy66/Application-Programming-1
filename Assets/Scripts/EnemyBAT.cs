@@ -61,19 +61,18 @@ public class EnemyBAT : MonoBehaviour
             {
                 enemyAnim.SetBool("IsFlying", false);
             }
-            else
+
+            transform.position = Vector2.MoveTowards(
+                transform.position,
+                currentPos,
+                speedEnemy * Time.deltaTime
+            );
+
+            enemyAnim.SetBool("IsFlying", false);
+            if (isChasingPlayer)
             {
-                transform.position = Vector2.MoveTowards(
-                    transform.position,
-                    currentPos,
-                    speedEnemy * Time.deltaTime
-                );
-                enemyAnim.SetBool("IsFlying", true);
-                if (isChasingPlayer)
-                {
-                    isChasingPlayer = false;
-                    Flip();
-                }
+                isChasingPlayer = false;
+                Flip();
             }
         }
     }
