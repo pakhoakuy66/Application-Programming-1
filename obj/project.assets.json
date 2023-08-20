@@ -11,19 +11,6 @@
         "runtime": {
           "bin/placeholder/AstarPathfindingProject.dll": {}
         }
-      },
-      "PackageToolsEditor/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "AstarPathfindingProject": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/PackageToolsEditor.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/PackageToolsEditor.dll": {}
-        }
       }
     }
   },
@@ -32,17 +19,11 @@
       "type": "project",
       "path": "AstarPathfindingProject.csproj",
       "msbuildProject": "AstarPathfindingProject.csproj"
-    },
-    "PackageToolsEditor/1.0.0": {
-      "type": "project",
-      "path": "PackageToolsEditor.csproj",
-      "msbuildProject": "PackageToolsEditor.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "AstarPathfindingProject >= 1.0.0",
-      "PackageToolsEditor >= 1.0.0"
+      "AstarPathfindingProject >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -51,9 +32,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj",
-      "projectName": "AstarPathfindingProjectEditor",
-      "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj",
+      "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj",
+      "projectName": "PackageToolsEditor",
+      "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
       "outputPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\",
       "projectStyle": "PackageReference",
@@ -72,9 +53,6 @@
           "projectReferences": {
             "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {
               "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj"
-            },
-            "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj": {
-              "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj"
             }
           }
         }

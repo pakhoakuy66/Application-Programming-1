@@ -271,7 +271,7 @@ public class PlayerController : MonoBehaviour
         }
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalVelocity));
-        animator.SetBool("Jump", isJumping && !isDashing);
+        animator.SetBool("Jump", (isJumping || IsFalling()) && !isDashing);
         animator.SetFloat("VerticalVelocity", rb.velocity.y);
         animator.SetBool("Crouch", isCrouching);
         animator.SetBool("Climb", isClimbing);

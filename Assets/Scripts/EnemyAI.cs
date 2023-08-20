@@ -16,6 +16,9 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField]
     private Transform enemyGFX;
+
+    private bool isPlayerInRange = false;
+
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
@@ -32,7 +35,19 @@ public class EnemyAI : MonoBehaviour
     void UpdatePath()
     {
         if (seeker.IsDone())
-            seeker.StartPath(rb.position, target.position, OnPathComplete);
+        {
+            if (isPlayerInRange)
+            {
+                seeker.StartPath(rb.position, target.position, OnPathComplete);
+            }
+            else
+            {
+                path = null;
+                Vector2 randomDirection = Random.insideUnitCircle.normalized;
+                Vector2 targetPosition = rb.position + randomDirection * 10f; // Adjust the distance as needed
+                seeker.StartPath(rb.position, targetPosition, OnPathComplete);
+            }
+        }
     }
 
     void OnPathComplete(Path p)
@@ -44,7 +59,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (path == null)
@@ -68,11 +82,27 @@ public class EnemyAI : MonoBehaviour
         }
         if (force.x >= 0.01f)
         {
-            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
         }
         else if (force.x <= -0.01f)
         {
-            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInRange = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInRange = false;
         }
     }
 }
