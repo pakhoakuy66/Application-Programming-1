@@ -11,6 +11,19 @@
         "runtime": {
           "bin/placeholder/AstarPathfindingProject.dll": {}
         }
+      },
+      "PackageToolsEditor/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "AstarPathfindingProject": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PackageToolsEditor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PackageToolsEditor.dll": {}
+        }
       }
     }
   },
@@ -19,11 +32,17 @@
       "type": "project",
       "path": "AstarPathfindingProject.csproj",
       "msbuildProject": "AstarPathfindingProject.csproj"
+    },
+    "PackageToolsEditor/1.0.0": {
+      "type": "project",
+      "path": "PackageToolsEditor.csproj",
+      "msbuildProject": "PackageToolsEditor.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "AstarPathfindingProject >= 1.0.0"
+      "AstarPathfindingProject >= 1.0.0",
+      "PackageToolsEditor >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -32,9 +51,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj",
-      "projectName": "PackageToolsEditor",
-      "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj",
+      "projectUniqueName": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProjectEditor.csproj",
+      "projectName": "AstarPathfindingProjectEditor",
+      "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProjectEditor.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
       "outputPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\obj\\",
       "projectStyle": "PackageReference",
@@ -53,6 +72,9 @@
           "projectReferences": {
             "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
               "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj"
+            },
+            "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj": {
+              "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj"
             }
           }
         }

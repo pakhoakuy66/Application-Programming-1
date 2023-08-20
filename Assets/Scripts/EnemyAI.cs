@@ -105,4 +105,10 @@ public class EnemyAI : MonoBehaviour
             isPlayerInRange = false;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.TryGetComponent<PlayerController>(out var player))
+            player.Die();
+    }
 }
