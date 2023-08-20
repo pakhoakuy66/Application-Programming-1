@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Game\\Application-Programming-1\\PackageToolsEditor.csproj": {}
+    "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj": {}
   },
   "projects": {
-    "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
+    "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj",
+        "projectUniqueName": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj",
         "projectName": "AstarPathfindingProject",
-        "projectPath": "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj",
+        "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "d:\\Game\\Application-Programming-1\\obj\\",
+        "outputPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -52,14 +52,14 @@
         }
       }
     },
-    "d:\\Game\\Application-Programming-1\\PackageToolsEditor.csproj": {
+    "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Game\\Application-Programming-1\\PackageToolsEditor.csproj",
+        "projectUniqueName": "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj",
         "projectName": "PackageToolsEditor",
-        "projectPath": "d:\\Game\\Application-Programming-1\\PackageToolsEditor.csproj",
+        "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "d:\\Game\\Application-Programming-1\\obj\\",
+        "outputPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -74,8 +74,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
-                "projectPath": "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj"
+              "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
+                "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj"
               }
             }
           }
