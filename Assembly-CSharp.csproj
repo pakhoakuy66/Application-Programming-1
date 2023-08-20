@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\ToNextLevel.cs" />
     <Compile Include="Assets\Scripts\GUIs\settingdisplay.cs" />
     <Compile Include="Assets\Scripts\GUIs\loading.cs" />
+    <Compile Include="Assets\Scripts\EnemyDog.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Debugger.cs" />
     <Compile Include="Assets\Scripts\GUIs\musicimg.cs" />
