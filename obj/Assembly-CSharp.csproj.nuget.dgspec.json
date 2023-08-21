@@ -1,6 +1,19 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "d:\\New folder (2)\\Game\\Application-Programming-1\\Assembly-CSharp.csproj": {}
+  },
+  "projects": {
+    "d:\\New folder (2)\\Game\\Application-Programming-1\\Assembly-CSharp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "d:\\New folder (2)\\Game\\Application-Programming-1\\Assembly-CSharp.csproj",
+        "projectName": "Assembly-CSharp",
+        "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\Assembly-CSharp.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\obj\\",
+=======
     "e:\\VL\\ApplicationProgramming\\Application Programming 1\\Assembly-CSharp.csproj": {}
   },
   "projects": {
@@ -12,6 +25,7 @@
         "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\Assembly-CSharp.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
         "outputPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\",
+>>>>>>> 3ab22937de525d4bd854e74bc834dbc075535a41
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,6 +40,16 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
+<<<<<<< HEAD
+              "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
+                "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj"
+              },
+              "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProjectEditor.csproj": {
+                "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProjectEditor.csproj"
+              },
+              "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj": {
+                "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj"
+=======
               "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {
                 "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj"
               },
@@ -34,6 +58,7 @@
               },
               "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj": {
                 "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj"
+>>>>>>> 3ab22937de525d4bd854e74bc834dbc075535a41
               }
             }
           }
@@ -62,11 +87,37 @@
         }
       }
     },
+<<<<<<< HEAD
+    "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj",
+        "projectName": "AstarPathfindingProject",
+        "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\obj\\",
+=======
     "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {
       "restore": {
         "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj",
         "projectName": "AstarPathfindingProject",
         "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj",
+<<<<<<< HEAD
+=======
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\",
+>>>>>>> 3ab22937de525d4bd854e74bc834dbc075535a41
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+>>>>>>> HoangPhuc2709-enemy
         "frameworks": {
           "net471": {
             "projectReferences": {}
@@ -77,19 +128,53 @@
         "net471": {}
       }
     },
+<<<<<<< HEAD
+    "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProjectEditor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProjectEditor.csproj",
+        "projectName": "AstarPathfindingProjectEditor",
+        "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProjectEditor.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\obj\\",
+=======
     "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj": {
       "restore": {
         "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj",
         "projectName": "AstarPathfindingProjectEditor",
         "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj",
+<<<<<<< HEAD
+=======
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\",
+>>>>>>> 3ab22937de525d4bd854e74bc834dbc075535a41
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+>>>>>>> HoangPhuc2709-enemy
         "frameworks": {
           "net471": {
             "projectReferences": {
+<<<<<<< HEAD
+              "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
+                "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj"
+              },
+              "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj": {
+                "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj"
+=======
               "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {
                 "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj"
               },
               "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj": {
                 "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj"
+>>>>>>> 3ab22937de525d4bd854e74bc834dbc075535a41
               }
             }
           }
@@ -99,16 +184,47 @@
         "net471": {}
       }
     },
+<<<<<<< HEAD
+    "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj",
+        "projectName": "PackageToolsEditor",
+        "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\obj\\",
+=======
     "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj": {
       "restore": {
         "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj",
         "projectName": "PackageToolsEditor",
         "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj",
+<<<<<<< HEAD
+=======
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\",
+>>>>>>> 3ab22937de525d4bd854e74bc834dbc075535a41
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+>>>>>>> HoangPhuc2709-enemy
         "frameworks": {
           "net471": {
             "projectReferences": {
+<<<<<<< HEAD
+              "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
+                "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj"
+=======
               "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {
                 "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj"
+>>>>>>> 3ab22937de525d4bd854e74bc834dbc075535a41
               }
             }
           }

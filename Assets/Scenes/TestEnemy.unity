@@ -166,8 +166,8 @@ GameObject:
   - component: {fileID: 162004826}
   - component: {fileID: 162004828}
   - component: {fileID: 162004831}
-  - component: {fileID: 162004830}
   - component: {fileID: 162004832}
+  - component: {fileID: 162004833}
   m_Layer: 0
   m_Name: dog-idlet1
   m_TagString: Untagged
@@ -263,51 +263,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &162004830
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 162004825}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.13780928, y: -0.29399234}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.65, y: 1.3}
-    newSize: {x: 0.33, y: 0.26}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6761484, y: 0.7120153}
-  m_EdgeRadius: 0
 --- !u!50 &162004831
 Rigidbody2D:
   serializedVersion: 4
@@ -352,6 +307,41 @@ MonoBehaviour:
   speedEnemy: 5
   player: {fileID: 1557724199}
   distance: 10
+--- !u!58 &162004833
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162004825}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.10324669, y: -0.1376611}
+  serializedVersion: 2
+  m_Radius: 0.48084652
 --- !u!1 &346164291
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &424140830
 Transform:
   m_ObjectHideFlags: 0
@@ -2847,7 +2837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1495005368
 Transform:
   m_ObjectHideFlags: 0
@@ -3184,7 +3174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1709790980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3199,7 +3189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAA4IeySK7ttcwIAAC8FAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWxCcHQW+sQ0kMSJrSTiy/CWmMNsuTRR4Bk+O9dyTZ2KRfkt7tPb9+u/UW4NDXkVum15uxZMSDfR8SfybdRH3yCE90rueWf0OW8c2ZLn0RDzhu1XCEe+zKjKrCa5z/kXvjkCEEneaF0tWJ7SJWxBuGCCgMY0sr6aonQ14ic8G+89CVnPE0Tf/rE0zIaXfCYg7Sg+9Q4nizDry0YPPqqu8l9Mp8mi9lqHCWBwMlc0KoG5rvpeabzjmAW0iT22Wb4nnIlBDetSGLPdTAhpbVx2CImME6x6aAsntwhUALfl9YzD8tfi8KAbT3R9PzANbrX8JKfqrG0oubQKPugwvmbxtMoDrIa1uf/E5pwoVX11F0cR/4SW/L88EbPOTV2YPoQfhhoDw4dqTjQnYD3EuSLWmvlJMOg1c6XOgPTh/7x2ltaQn7o8UbqDejq3vJuxt2EccCX0P0pFbzaeWQya4CtUMHxsBegcTa/UG/YGtMyIOpF/DHwm+6H69UGHrk2FkNtk9Kr2ymnfSpZBct8M86mSksIcKu5BkmFPW+Qxt6O8CY2uPYm8kj9i9Re3sa69+OmJMB9fhTdhDbqeJ2VKdXxGUz56qzgEnrRPvCCPqVKymbDhp50ZVunC5oPyvaOs383iySwmCU5JMk83i1jthvTRZzEUTKNZ/fLxXyXkLB6XGKfVGwaoa09ODXZk0tcs+77MlprWodtZ5oe1/yzUgPLuSzUNtcA8rVhuAoHjZfge8lWjKNBW7CWyzBv8pURofIDsOxKlIVOVyeradazZKTmH8p6JCNp+KBkxMPXVd5o+OBw9Jd3ZBdy+QtQSwMEFAAACAgAADgh7I/Pl2xtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJJ5qoWJeXKqubmZYZKlYUqSbqKFobmhgbmRoYmppYVZkrlSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAADgh7JIru21zAgAALwUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAADgh7I/Pl2xtAAAAeAAAAAkAJAAAAAAAAAAAAAAAwAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAAB4AwAAAAA=
+    dataString: UEsDBBQAAAgIAAA4IexsF6yNcgIAADAFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWxCcHQW+sQ0kMSJrSTiy/CWmMNsuTRR4Bk+O9dyTZ2qS+W3369fbvyF+HS1JBbpdeas2fFgHwfEX8m30a98QlOdK/kln9C5/POmS29Ew0+b9RyhXjsw4yqwGqe/5B74Z0jBJ3khdLViu0hVcYahAsqDKBJK+ujJUJfI3LC13jpQ854mib+9ImnZTS64DEHaUH3rnE8WYanDRh8+qi7yX0ynyaL2WocJSGBk7mgVQ3Md9Pnmc67BLPgJrHP1sP3lCshuGlJEnuugwgprY3DFtGBcYpNB2bx5A6BEvi+tD7zMPy1KAzYVhNNzw9co3pNXvJTNZJW1BwaZh9UOF9pPI3iQKvJ+vy/Q2MutKqeusJx5IvYkueHN3rOqbED0Yfww4B7UOhIxYHuBLyXIF/UWisnGRqtdj7UGZg+9J/X3tIS8kOPN1RvQFf3kncz7iaMA76E7k+p4NXOI5NZA2yFCoqHvQCNs/mFfMPWmDYDop7EHwO/6X64Xq3hkWtj0dQ2KT27nXLau5JVkMw342yqtIQAt5xrkFTY8wbT2NsR3tgGZW8sj9RfpLZ4a+vux01IgHv/KLoxbdTxOitTquMzmPLVWcEl9KS94QV1SpWUzYYNNenCtk4XNB+E7R1n/24WSWAxS3JIknm8W8ZsN6aLOImjZBrP7peL+S4hYfW4xD6p2DREW3lwarJPLnHNuv/LaK1pHbadaXpc889KDQlyWahtrgHka5Piyhw0VsGLyVaMo0JbsJbLMHDylRGh8gOw7FozC62uTlbTrM+SkZp/KOuRjKThj5IRD193eaPhg8PRF++SXcjlL1BLAwQUAAAICAAAOCHsj8+XbG0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0knmqhYl5cqq5uZlhkqVhSpJuooWhuaGBuZGhiamlhVmSuVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAOCHsbBesjXICAAAwBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAOCHsj8+XbG0AAAB4AAAACQAkAAAAAAAAAAAAAAC/AgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAHcDAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 

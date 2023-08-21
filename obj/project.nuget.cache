@@ -1,8 +1,21 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "Ujn4BRc60tfc98VTfR3jUMQvSkUAvlfHVH+ubQ9ftOtu2LHSAgn5YIbeDCJnEH85sQ2CgJHZkCKeHdFRzg671Q==",
   "success": true,
   "projectFilePath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\Assembly-CSharp.csproj",
+=======
+  "dgSpecHash": "Pb5DEd1YV4BQiU5BWQt/1JLUqMJxoUM/zBh7WBTaPfyXJikiTxnPxgUmDT+nMK4oG6SITYHLgdKKAul7V74r9w==",
+  "success": true,
+  "projectFilePath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj",
+>>>>>>> HoangPhuc2709-enemy
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

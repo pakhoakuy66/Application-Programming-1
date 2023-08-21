@@ -71,6 +71,7 @@
     <Compile Include="Assets\gameovern.cs" />
     <Compile Include="Assets\chuyendong.cs" />
     <Compile Include="Assets\Scripts\EnemyBAT.cs" />
+    <Compile Include="Assets\Scripts\TriggerPlayerInRange.cs" />
     <Compile Include="Assets\Scripts\Ladder.cs" />
     <Compile Include="Assets\Scripts\EnemyPatrol.cs" />
   </ItemGroup>

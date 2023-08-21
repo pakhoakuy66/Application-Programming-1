@@ -25,6 +25,12 @@ public class EnemyAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
+    public bool IsPlayerInRange
+    {
+        get => isPlayerInRange;
+        set => isPlayerInRange = value;
+    }
+
     void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -36,7 +42,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (seeker.IsDone())
         {
-            if (isPlayerInRange)
+            if (IsPlayerInRange)
             {
                 seeker.StartPath(rb.position, target.position, OnPathComplete);
             }
@@ -44,7 +50,7 @@ public class EnemyAI : MonoBehaviour
             {
                 path = null;
                 Vector2 randomDirection = Random.insideUnitCircle.normalized;
-                Vector2 targetPosition = rb.position + randomDirection * 10f; // Adjust the distance as needed
+                Vector2 targetPosition = rb.position + randomDirection * 10f;
                 seeker.StartPath(rb.position, targetPosition, OnPathComplete);
             }
         }
@@ -90,19 +96,9 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            isPlayerInRange = true;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isPlayerInRange = false;
-        }
+        if (other.gameObject.TryGetComponent<PlayerController>(out var player))
+            player.Die();
     }
 }
