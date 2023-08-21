@@ -1,39 +1,17 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {}
-  },
-  "projects": {
-    "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj",
-        "projectName": "AstarPathfindingProject",
-        "projectPath": "d:\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "d:\\Game\\Application-Programming-1\\obj\\",
-=======
     "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {}
-=======
-    "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {}
->>>>>>> 2b480e6cab67116e3880ae7c8505b010ef0f0838
   },
   "projects": {
-    "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
+    "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj",
+        "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj",
         "projectName": "AstarPathfindingProject",
-        "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj",
+        "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-<<<<<<< HEAD
         "outputPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\",
->>>>>>> bfa1a8655e04a0c3201c7eb4423d117f0ea2e422
-=======
-        "outputPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\obj\\",
->>>>>>> 2b480e6cab67116e3880ae7c8505b010ef0f0838
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -70,15 +48,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-<<<<<<< HEAD
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
-=======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.110\\RuntimeIdentifierGraph.json"
->>>>>>> bfa1a8655e04a0c3201c7eb4423d117f0ea2e422
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
->>>>>>> 2b480e6cab67116e3880ae7c8505b010ef0f0838
         }
       }
     }

@@ -246,7 +246,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (CircleCastHit(feet, .01f) || isClimbing)
+        if (IsGrounded() && rb.velocity.y <= .01f || isClimbing)
         {
             jumpAbleCount = jumpCount;
             isJumping = false;
