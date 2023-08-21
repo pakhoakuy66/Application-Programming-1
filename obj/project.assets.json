@@ -71,11 +71,17 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "d:\\New folder (2)\\Game\\Application-Programming-1\\Assembly-CSharp.csproj",
       "projectName": "Assembly-CSharp",
       "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\Assembly-CSharp.csproj",
+=======
+      "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj",
+      "projectName": "PackageToolsEditor",
+      "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj",
+>>>>>>> 3ab22937de525d4bd854e74bc834dbc075535a41
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\obj\\",
+      "outputPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -90,6 +96,7 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
+<<<<<<< HEAD
             "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
               "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj"
             },
@@ -98,6 +105,10 @@
             },
             "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj": {
               "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj"
+=======
+            "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {
+              "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj"
+>>>>>>> 3ab22937de525d4bd854e74bc834dbc075535a41
             }
           }
         }
@@ -122,7 +133,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.110\\RuntimeIdentifierGraph.json"
       }
     }
   }

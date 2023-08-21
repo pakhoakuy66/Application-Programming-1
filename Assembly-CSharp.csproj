@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\GUIs\audiomanager.cs" />
     <Compile Include="Assets\Scripts\PlatformController.cs" />
     <Compile Include="Assets\Scripts\GUIs\musicsetting.cs" />
+    <Compile Include="Assets\Scripts\ToNextLevel.cs" />
     <Compile Include="Assets\Scripts\GUIs\settingdisplay.cs" />
     <Compile Include="Assets\Scripts\GUIs\loading.cs" />
     <Compile Include="Assets\Scripts\EnemyDog.cs" />

@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public KeyCode climbDownKey = KeyCode.DownArrow;
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode crouchKey = KeyCode.LeftControl;
+    public KeyCode dashKey = KeyCode.LeftShift;
 
     [Header("Dependencies")]
     [SerializeField]
@@ -39,46 +40,61 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    [SerializeField]
+    private TrailRenderer trailRenderer;
+
     [Header("Player Settings")]
-    [Range(10f, 100f)]
     [SerializeField]
     private float speed = 40f;
 
-    [Range(1f, 10f)]
+    [SerializeField]
+    private float dashSpeed = 50f;
+
     [SerializeField]
     private float jumpHeight = 4f;
 
-    [Range(.1f, .9f)]
     [SerializeField]
     private float crouchSpeedFactor = .4f;
 
-    [Range(.1f, .9f)]
     [SerializeField]
     private float headCastRadius = .2f;
 
-    [Range(.1f, .9f)]
     [SerializeField]
     private float feetCastRadius = .2f;
 
-    [Range(0f, 1f)]
     [SerializeField]
     private float deathStopCamDelay = .5f;
 
     [SerializeField]
     private int jumpCount = 1;
 
+    [SerializeField]
+    private bool dashUnlocked = false;
+
+    [SerializeField]
+    private float dashCoolDown = 2f;
+
+    [SerializeField]
+    private float dashMaxTime = 1f;
+
     private int jumpAbleCount;
+    private int direction = 1;
     private float horizontalVelocity,
         verticalVelocity,
         jumpForce;
+    private float dashTimer = 0;
+
     private bool isAlive = true;
+    private bool dashAble = true;
     private bool jump = false;
+    private bool isJumping = false;
     private bool crouch = false;
     private bool isCrouching = false;
     private bool climbAble = false;
     private bool isClimbing = false;
+    private bool isDashing = false;
+    private bool isDashCooldown = false;
     private float defaultGScale;
-    private bool isJumping = false;
 
     private int Horizontal()
     {
@@ -147,6 +163,8 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         isAlive = false;
+        horizontalVelocity = 0;
+        isCrouching = true;
         headCollider.enabled = feetCollider.enabled = false;
         rb.velocity = Vector2.zero;
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -180,6 +198,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!isAlive)
             return;
+        if (isDashing)
+            return;
         float speedFactor = isCrouching ? crouchSpeedFactor : 1;
         horizontalVelocity = Horizontal() * speed * 10f * speedFactor;
 
@@ -187,7 +207,10 @@ public class PlayerController : MonoBehaviour
             !spriteRenderer.flipX && horizontalVelocity < -.01
             || spriteRenderer.flipX && horizontalVelocity > .01
         )
+        {
             spriteRenderer.flipX = !spriteRenderer.flipX;
+            direction = spriteRenderer.flipX ? -1 : 1;
+        }
 
         if (Input.GetKeyDown(jumpKey) && jumpAbleCount > 0 && (!IsFalling() || isClimbing))
             jump = true;
@@ -229,8 +252,26 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
         }
 
+        if (dashUnlocked && Input.GetKeyDown(dashKey) && dashAble && !isClimbing && !isCrouching)
+        {
+            rb.gravityScale = 0;
+            horizontalVelocity = 0;
+            isDashing = trailRenderer.emitting = true;
+            dashAble = false;
+        }
+
+        if (isDashCooldown)
+            dashTimer -= Time.deltaTime;
+
+        if (isDashCooldown && dashTimer <= 0)
+        {
+            isDashCooldown = false;
+            dashTimer = 0;
+            dashAble = true;
+        }
+
         animator.SetFloat("Speed", Mathf.Abs(horizontalVelocity));
-        animator.SetBool("Grounded", IsGrounded());
+        animator.SetBool("Jump", (isJumping || IsFalling()) && !isDashing);
         animator.SetFloat("VerticalVelocity", rb.velocity.y);
         animator.SetBool("Crouch", isCrouching);
         animator.SetBool("Climb", isClimbing);
@@ -238,8 +279,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isAlive)
-            return;
         rb.velocity = new Vector2(horizontalVelocity * Time.fixedDeltaTime, rb.velocity.y);
 
         if (jump)
@@ -256,5 +295,18 @@ public class PlayerController : MonoBehaviour
 
         if (isClimbing)
             rb.velocity = new Vector2(rb.velocity.x, verticalVelocity * Time.fixedDeltaTime);
+
+        if (isDashing)
+        {
+            dashTimer += Time.fixedDeltaTime;
+            rb.velocity = new Vector2(direction * Time.fixedDeltaTime * dashSpeed * 10f, 0);
+            if (dashTimer >= dashMaxTime)
+            {
+                rb.gravityScale = defaultGScale;
+                dashTimer = dashCoolDown;
+                isDashCooldown = true;
+                isDashing = trailRenderer.emitting = false;
+            }
+        }
     }
 }
