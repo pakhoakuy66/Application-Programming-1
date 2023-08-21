@@ -95,6 +95,7 @@ public class PlayerController : MonoBehaviour
     private bool isDashing = false;
     private bool isDashCooldown = false;
     private float defaultGScale;
+    public GameObject gameover;
 
     private int Horizontal()
     {
@@ -178,7 +179,7 @@ public class PlayerController : MonoBehaviour
                     StartCoroutine(
                         WaitAndExecute(
                             deathStopCamDelay,
-                            () => SceneManager.LoadScene(SceneManager.GetActiveScene().name)
+                            () => gameover.SetActive(true)
                         )
                     );
                 }

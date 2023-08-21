@@ -8,4 +8,5 @@ public class ToNextLevel : MonoBehaviour
         if (other.gameObject.TryGetComponent<PlayerController>(out _))
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+   
 }
