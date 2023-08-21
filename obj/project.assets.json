@@ -12,20 +12,6 @@
           "bin/placeholder/AstarPathfindingProject.dll": {}
         }
       },
-      "AstarPathfindingProjectEditor/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "AstarPathfindingProject": "1.0.0",
-          "PackageToolsEditor": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/AstarPathfindingProjectEditor.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/AstarPathfindingProjectEditor.dll": {}
-        }
-      },
       "PackageToolsEditor/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -47,11 +33,6 @@
       "path": "AstarPathfindingProject.csproj",
       "msbuildProject": "AstarPathfindingProject.csproj"
     },
-    "AstarPathfindingProjectEditor/1.0.0": {
-      "type": "project",
-      "path": "AstarPathfindingProjectEditor.csproj",
-      "msbuildProject": "AstarPathfindingProjectEditor.csproj"
-    },
     "PackageToolsEditor/1.0.0": {
       "type": "project",
       "path": "PackageToolsEditor.csproj",
@@ -61,7 +42,6 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "AstarPathfindingProject >= 1.0.0",
-      "AstarPathfindingProjectEditor >= 1.0.0",
       "PackageToolsEditor >= 1.0.0"
     ]
   },
@@ -71,15 +51,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "d:\\New folder (2)\\Game\\Application-Programming-1\\Assembly-CSharp.csproj",
-      "projectName": "Assembly-CSharp",
-      "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\Assembly-CSharp.csproj",
-=======
-      "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj",
-      "projectName": "PackageToolsEditor",
-      "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj",
->>>>>>> 3ab22937de525d4bd854e74bc834dbc075535a41
+      "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj",
+      "projectName": "AstarPathfindingProjectEditor",
+      "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
       "outputPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\",
       "projectStyle": "PackageReference",
@@ -96,19 +70,11 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-<<<<<<< HEAD
-            "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj": {
-              "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProject.csproj"
-            },
-            "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProjectEditor.csproj": {
-              "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\AstarPathfindingProjectEditor.csproj"
-            },
-            "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj": {
-              "projectPath": "d:\\New folder (2)\\Game\\Application-Programming-1\\PackageToolsEditor.csproj"
-=======
             "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {
               "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj"
->>>>>>> 3ab22937de525d4bd854e74bc834dbc075535a41
+            },
+            "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj": {
+              "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj"
             }
           }
         }
@@ -136,5 +102,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.110\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

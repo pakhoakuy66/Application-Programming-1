@@ -1,14 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "21gXk3GtEAEhKahJgHIken4/kSs8ErJgcH/QvPKZ5QQE3ys9UrGN6oD80CpDpPZR1Q/l0Ow0KfBCfstUOqitCQ==",
+  "dgSpecHash": "Pb5DEd1YV4BQiU5BWQt/1JLUqMJxoUM/zBh7WBTaPfyXJikiTxnPxgUmDT+nMK4oG6SITYHLgdKKAul7V74r9w==",
   "success": true,
-  "projectFilePath": "d:\\New folder (2)\\Game\\Application-Programming-1\\Assembly-CSharp.csproj",
-=======
-  "dgSpecHash": "kTff9vKZVvjzTYpT0GzE6vPfHshDhypTtQJDrYqpIjXtwCoTbdGiP2+oSP52CmihfEeKih43l0NUfkEieFoJdA==",
-  "success": true,
-  "projectFilePath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj",
->>>>>>> 3ab22937de525d4bd854e74bc834dbc075535a41
+  "projectFilePath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
