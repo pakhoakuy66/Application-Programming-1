@@ -43,7 +43,6 @@ public class EnemyBAT : MonoBehaviour
             );
             enemyAnim.SetBool("IsFlying", true);
 
-            // Xác định hướng di chuyển của dơi khi đuổi theo người chơi
             if (transform.position.x < playerPos.position.x && isMovingRight)
             {
                 isMovingRight = false;
@@ -57,22 +56,24 @@ public class EnemyBAT : MonoBehaviour
         }
         else
         {
-            if (Vector2.Distance(transform.position, currentPos) <= 0)
+            if (Vector2.Distance(transform.position, currentPos) <= 0.4f)
             {
                 enemyAnim.SetBool("IsFlying", false);
             }
-
-            transform.position = Vector2.MoveTowards(
-                transform.position,
-                currentPos,
-                speedEnemy * Time.deltaTime
-            );
-
-            enemyAnim.SetBool("IsFlying", false);
-            if (isChasingPlayer)
+            else
             {
-                isChasingPlayer = false;
-                Flip();
+                transform.position = Vector2.MoveTowards(
+                    transform.position,
+                    currentPos,
+                    speedEnemy * Time.deltaTime
+                );
+
+                enemyAnim.SetBool("IsFlying", true);
+                if (isChasingPlayer)
+                {
+                    isChasingPlayer = false;
+                    Flip();
+                }
             }
         }
     }
