@@ -179,7 +179,15 @@ public class PlayerController : MonoBehaviour
                     StartCoroutine(
                         WaitAndExecute(
                             deathStopCamDelay,
-                            () => gameover.SetActive(true)
+                            () =>
+                            {
+                                if (gameover != null)
+                                    gameover.SetActive(true);
+                                else
+                                    SceneManager.LoadScene(
+                                        SceneManager.GetActiveScene().buildIndex
+                                    );
+                            }
                         )
                     );
                 }

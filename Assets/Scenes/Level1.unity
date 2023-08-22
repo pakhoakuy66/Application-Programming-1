@@ -31395,6 +31395,10 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 789117970}
+    - target: {fileID: 6294822083188487757, guid: 24da90a356fbae4479298122dd539a23, type: 3}
+      propertyPath: groundMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7956314351183734278, guid: 24da90a356fbae4479298122dd539a23, type: 3}
       propertyPath: m_Name
       value: Player

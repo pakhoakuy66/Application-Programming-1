@@ -4,6 +4,7 @@
     ".NETStandard,Version=v2.0": {
       "AstarPathfindingProject/1.0.0": {
         "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
         "compile": {
           "bin/placeholder/AstarPathfindingProject.dll": {}
         },
@@ -11,9 +12,9 @@
           "bin/placeholder/AstarPathfindingProject.dll": {}
         }
       },
-<<<<<<< HEAD
       "AstarPathfindingProjectEditor/1.0.0": {
         "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "AstarPathfindingProject": "1.0.0",
           "PackageToolsEditor": "1.0.0"
@@ -27,11 +28,7 @@
       },
       "PackageToolsEditor/1.0.0": {
         "type": "project",
-=======
-      "PackageToolsEditor/1.0.0": {
-        "type": "project",
         "framework": ".NETStandard,Version=v2.0",
->>>>>>> HoangPhuc2709-enemy
         "dependencies": {
           "AstarPathfindingProject": "1.0.0"
         },
@@ -50,14 +47,11 @@
       "path": "AstarPathfindingProject.csproj",
       "msbuildProject": "AstarPathfindingProject.csproj"
     },
-<<<<<<< HEAD
     "AstarPathfindingProjectEditor/1.0.0": {
       "type": "project",
       "path": "AstarPathfindingProjectEditor.csproj",
       "msbuildProject": "AstarPathfindingProjectEditor.csproj"
     },
-=======
->>>>>>> HoangPhuc2709-enemy
     "PackageToolsEditor/1.0.0": {
       "type": "project",
       "path": "PackageToolsEditor.csproj",
@@ -67,10 +61,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "AstarPathfindingProject >= 1.0.0",
-<<<<<<< HEAD
       "AstarPathfindingProjectEditor >= 1.0.0",
-=======
->>>>>>> HoangPhuc2709-enemy
       "PackageToolsEditor >= 1.0.0"
     ]
   },
@@ -80,15 +71,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\Assembly-CSharp.csproj",
       "projectName": "Assembly-CSharp",
       "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\Assembly-CSharp.csproj",
-=======
-      "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj",
-      "projectName": "AstarPathfindingProjectEditor",
-      "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj",
->>>>>>> HoangPhuc2709-enemy
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
       "outputPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\",
       "projectStyle": "PackageReference",
@@ -108,12 +93,9 @@
             "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {
               "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj"
             },
-<<<<<<< HEAD
             "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj": {
               "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj"
             },
-=======
->>>>>>> HoangPhuc2709-enemy
             "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj": {
               "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj"
             }
@@ -143,13 +125,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.110\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
