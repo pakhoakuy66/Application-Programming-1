@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     public KeyCode crouchKey = KeyCode.LeftControl;
     public KeyCode dashKey = KeyCode.LeftShift;
 
+    public AudioSource audioSource;
+    public AudioClip death;
+
     [Header("Dependencies")]
     [SerializeField]
     private Rigidbody2D rb;
@@ -163,6 +166,8 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        audioSource.Stop();
+        audioSource.PlayOneShot(death);
         isAlive = false;
         horizontalVelocity = 0;
         isCrouching = true;
