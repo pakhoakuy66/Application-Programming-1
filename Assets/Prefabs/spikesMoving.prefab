@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 402528705569200858}
   m_Layer: 0
-  m_Name: SpikesMoving
+  m_Name: spikesMoving
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ Transform:
   - {fileID: 7567512412066852624}
   - {fileID: 8829477234944761760}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4821785675764586572
 GameObject:
@@ -187,6 +187,10 @@ PrefabInstance:
     - target: {fileID: 8135279426729697076, guid: 859274958d511e84da9c8836f0859525, type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173259540886874020, guid: 859274958d511e84da9c8836f0859525, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

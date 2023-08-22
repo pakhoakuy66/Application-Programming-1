@@ -12,20 +12,6 @@
           "bin/placeholder/AstarPathfindingProject.dll": {}
         }
       },
-      "AstarPathfindingProjectEditor/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "AstarPathfindingProject": "1.0.0",
-          "PackageToolsEditor": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/AstarPathfindingProjectEditor.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/AstarPathfindingProjectEditor.dll": {}
-        }
-      },
       "PackageToolsEditor/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -47,11 +33,6 @@
       "path": "AstarPathfindingProject.csproj",
       "msbuildProject": "AstarPathfindingProject.csproj"
     },
-    "AstarPathfindingProjectEditor/1.0.0": {
-      "type": "project",
-      "path": "AstarPathfindingProjectEditor.csproj",
-      "msbuildProject": "AstarPathfindingProjectEditor.csproj"
-    },
     "PackageToolsEditor/1.0.0": {
       "type": "project",
       "path": "PackageToolsEditor.csproj",
@@ -61,7 +42,6 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "AstarPathfindingProject >= 1.0.0",
-      "AstarPathfindingProjectEditor >= 1.0.0",
       "PackageToolsEditor >= 1.0.0"
     ]
   },
@@ -71,9 +51,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\Assembly-CSharp.csproj",
-      "projectName": "Assembly-CSharp",
-      "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\Assembly-CSharp.csproj",
+      "projectUniqueName": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj",
+      "projectName": "AstarPathfindingProjectEditor",
+      "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
       "outputPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\obj\\",
       "projectStyle": "PackageReference",
@@ -92,9 +72,6 @@
           "projectReferences": {
             "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj": {
               "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProject.csproj"
-            },
-            "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj": {
-              "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\AstarPathfindingProjectEditor.csproj"
             },
             "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj": {
               "projectPath": "e:\\VL\\ApplicationProgramming\\Application Programming 1\\PackageToolsEditor.csproj"
