@@ -15,9 +15,6 @@ public class PlayerController : MonoBehaviour
     public KeyCode crouchKey = KeyCode.LeftControl;
     public KeyCode dashKey = KeyCode.LeftShift;
 
-    public AudioSource audioSource;
-    public AudioClip death;
-
     [Header("Dependencies")]
     [SerializeField]
     private Rigidbody2D rb;
@@ -166,12 +163,9 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        audioSource.Stop();
-        audioSource.PlayOneShot(death);
-        isAlive = false;
+        isAlive = isDashing = headCollider.enabled = feetCollider.enabled = false;
         horizontalVelocity = 0;
         isCrouching = true;
-        headCollider.enabled = feetCollider.enabled = false;
         rb.velocity = Vector2.zero;
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         CinemachineVirtualCamera vcam = GetComponentInChildren<CinemachineVirtualCamera>();
